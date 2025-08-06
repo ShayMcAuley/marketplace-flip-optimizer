@@ -24,6 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Run tests
+     - name: Run tests
       run: |
-        echo "No tests yet — passing by default"
+        python -m unittest discover tests
