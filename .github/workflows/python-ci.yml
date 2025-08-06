@@ -28,6 +28,10 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run tests
+      - name: Run unit tests
         run: |
           PYTHONPATH=. python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Run integration tests
+        run: |
+          PYTHONPATH=. python -m unittest discover -s tests -p "test_integration.py"
